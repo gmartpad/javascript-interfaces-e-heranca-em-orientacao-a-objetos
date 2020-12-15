@@ -1,0 +1,21 @@
+{
+  "name": "javascript-programando-a-orientacao-a-objetos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gmartpad/javascript-programando-a-orientacao-a-objetos.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gmartpad/javascript-programando-a-orientacao-a-objetos/issues"
+  },
+  "homepage": "https://github.com/gmartpad/javascript-programando-a-orientacao-a-objetos#readme",
+  "type":"module"
+}
