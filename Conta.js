@@ -1,6 +1,7 @@
 export class Conta {
     
     constructor(saldoInicial, cliente, agencia){
+        // this._tipo = tipo;
         this._saldo = saldoInicial;
         this._cliente = cliente;
         this._agencia = agencia;
@@ -8,12 +9,49 @@ export class Conta {
 
     //------------------------------------------------------------
 
+    set cliente(novoCliente){
+        if(novoCliente instanceof Cliente){
+            this._cliente = novoCliente;
+        }
+    }
+
+    get cliente(){
+        return this._cliente;
+    }
+
+
+    get saldo(){
+        return this._saldo;
+    }
+
+    //------------------------------------------------------------
+
     sacar(valorSacado){
-        if(this._saldo < valorSacado){
+
+        let taxa = 1;
+
+        // switch(this._tipo){
+        //     case "corrente":
+        //         taxa = 1.1;
+        //         break;
+        //     case "salario":
+        //         taxa = 1.05;
+        //         break;
+        //     case "empresarial":
+        //         taxa = 1.15;
+        //         break;
+        //     default:
+        //         taxa = 1;
+        //         break;
+        // }
+
+        let valorPosTaxa = taxa * valorSacado;
+
+        if(this._saldo < valorPosTaxa){
             return;
         }
-        this._saldo -= valorSacado;
-        return valorSacado;
+        this._saldo -= valorPosTaxa;
+        return valorPosTaxa;
     }
 
     depositar(valorDepositado){
@@ -25,6 +63,9 @@ export class Conta {
     }
 
     transferir(valorTransferido, contaBeneficiaria){
+        // if(this._tipo == "salario"){
+        //     return;
+        // }
         const valorSacado = this.sacar(valorTransferido);
         if(isNaN(valorSacado)){
             console.error("Não foi possível realizar transferência, saldos insuficientes")
