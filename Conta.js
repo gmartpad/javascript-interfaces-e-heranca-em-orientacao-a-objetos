@@ -29,26 +29,14 @@ export class Conta {
     sacar(valorSacado){
 
         let taxa = 1;
+        return this._sacar(taxa, valorSacado);
 
-        // switch(this._tipo){
-        //     case "corrente":
-        //         taxa = 1.1;
-        //         break;
-        //     case "salario":
-        //         taxa = 1.05;
-        //         break;
-        //     case "empresarial":
-        //         taxa = 1.15;
-        //         break;
-        //     default:
-        //         taxa = 1;
-        //         break;
-        // }
-
+    }
+    
+    _sacar(taxa, valorSacado){
         let valorPosTaxa = taxa * valorSacado;
-
         if(this._saldo < valorPosTaxa){
-            return;
+            return 0;
         }
         this._saldo -= valorPosTaxa;
         return valorPosTaxa;
@@ -74,8 +62,8 @@ export class Conta {
         contaBeneficiaria.depositar(valorSacado);
     }
 
-    teste(){
-        console.log("teste na classe conta");
-    }
+    // teste(){
+    //     console.log("teste na classe conta");
+    // }
 
 }
