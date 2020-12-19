@@ -74,4 +74,8 @@ export class Conta {
         contaBeneficiaria.depositar(valorSacado);
     }
 
+    teste(){
+        console.log("teste na classe conta");
+    }
+
 }

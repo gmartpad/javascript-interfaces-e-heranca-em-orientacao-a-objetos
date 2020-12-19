@@ -21,3 +21,5 @@ const contaPoupancaJose = new ContaPoupanca(contaCorrenteJose.sacar(30), cliente
 
 console.log(contaPoupancaJose);
 console.log(contaCorrenteJose);
+
+contaCorrenteJose.teste();
