@@ -24,6 +24,6 @@ console.log(contaCorrenteJose);
 
 // contaCorrenteJose.teste();
 
-// const conta = new Conta(0, cliente1, 1001);
+const conta = new Conta(0, cliente1, 1001);
 
-// console.log(conta);
+console.log(conta);
