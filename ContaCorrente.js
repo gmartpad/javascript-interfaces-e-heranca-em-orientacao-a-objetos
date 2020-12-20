@@ -16,6 +16,13 @@ export class ContaCorrente extends Conta {
         ContaCorrente.numeroDeContas += 1;
     }
 
+    sacar(valorSacado){
+
+        let taxa = 1.1;
+        return this._sacar(taxa, valorSacado);
+
+    }
+
     // teste(){
     //     super.teste();
     //     console.log("teste na classe conta corrente");
