@@ -1,5 +1,7 @@
 /**
  * Ser autenticável significa ter o método autenticar.
+ * 
+ * Duck typing
  */
 
 export class SistemaAutenticacao {
@@ -11,8 +13,10 @@ export class SistemaAutenticacao {
     }
 
     static ehAutenticavel(autenticavel){
-        return "autenticar" in autenticavel && autenticavel.autenticar instanceof Function; 
-        //devolve true ou false dependendo se tem a função dentro do autenticavel ou não
+        return "autenticar" in autenticavel && 
+            autenticavel.autenticar instanceof Function; 
+        //devolve true ou false dependendo se tem a função 
+        //dentro do autenticavel ou não
     }
 
     constructor(){
